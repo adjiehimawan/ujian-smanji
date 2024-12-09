@@ -8,18 +8,18 @@
 <body>
     <h1>Silahkan gunakan aplikasi CBT Exam Browser</h1>
     <script>
-        function isAndroidWebView() {
+       function isAndroidWebView() {
     var userAgent = navigator.userAgent;
     return (userAgent.includes('wv') || userAgent.includes('WebView') || userAgent.includes('Android'));
 }
 
 function isMobile() {
     var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-    return (/android/i.test(userAgent) || /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream);
+    return (/android/i.test(userAgent));
 }
 
-if (!isAndroidWebView() && isMobile()) {
-    alert("Aplikasi tidak bisa diakses via browser");
+if (isMobile() && !isAndroidWebView()) {
+    alert("Aplikasi tidak bisa diakses via browser di perangkat mobile");
 }
 
     </script>
