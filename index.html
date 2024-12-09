@@ -6,16 +6,23 @@
     <title>My WebView Website</title>
 </head>
 <body>
-    <h1>Selamat Datang di Website Saya</h1>
+    <h1>Silahkan gunakan aplikasi CBT Exam Browser</h1>
     <script>
-        function isAndroidWebView() {
-            var userAgent = navigator.userAgent;
-            return (userAgent.includes('wv') || userAgent.includes('WebView') || userAgent.includes('Android'));
-        }
+       function isAndroidWebView() {
+    var userAgent = navigator.userAgent;
+    return (userAgent.includes('wv') || userAgent.includes('WebView') || userAgent.includes('Android'));
+}
 
-        if (!isAndroidWebView()) {
-           alert("Aplikasi tidak bisa diakses via browser");
-        }
+function isMobile() {
+    var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    return (/android/i.test(userAgent));
+}
+
+if (isMobile() && !isAndroidWebView()) {
+    alert("Aplikasi tidak bisa diakses via browser di perangkat mobile");
+}
+
     </script>
+
 </body>
 </html>
